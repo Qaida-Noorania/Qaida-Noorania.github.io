@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        h1, h2 {
+            margin: 0.5rem 0;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Representation</h1>
+    </header>
+    <main>
+        <section id="data-table">
+            <h2>Generated Data</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Page</th>
+                        <th>Row</th>
+                        <th>Column</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Sample data from the text file converted to an array of arrays
+            const data = [
+                ["6", "0", "0", "image-06_0", "basmla"],
+                ["6", "1", "0", "image-06_1", "lesson1"],
+                ["6", "2", "0", "image-06_6", "l1geem"],
+                ["6", "2", "1", "image-06_5", "l1sthaa"],
+                ["6", "2", "2", "image-06_4", "l1taa"],
+                ["6", "2", "3", "image-06_3", "l1baa"],
+                ["6", "2", "4", "image-06_2", "l1alf"],
+                ["6", "3", "0", "image-06_7", "l1raa"],
+                ["6", "3", "1", "image-06_11", "l1zaal"],
+                ["6", "3", "2", "image-06_10", "l1daal"],
+                ["6", "3", "3", "image-06_9", "l15aa"],
+                ["6", "3", "4", "image-06_8", "l17aa"],
+                ["6", "4", "0", "image-06_16", "l1daad"],
+                ["6", "4", "1", "image-06_15", "l1saad"],
+                ["6", "4", "2", "image-06_14", "l1sheen"],
+                ["6", "4", "3", "image-06_13", "l1seen"],
+                ["6", "4", "4", "image-06_12", "l1zaa"],
+                ["6", "5", "0", "image-06_21", "l1faa"],
+                ["6", "5", "1", "image-06_20", "l1ghaeen"],
+                ["6", "5", "2", "image-06_19", "l13aeen"],
+                ["6", "5", "3", "image-06_18", "l1zzaa"],
+                ["6", "5", "4", "image-06_17", "l1ttaa"],
+                ["6", "6", "0", "image-06_26", "l1noon"],
+                ["6", "6", "1", "image-06_25", "l1meem"],
+                ["6", "6", "2", "image-06_24", "l1laam"],
+                ["6", "6", "3", "image-06_23", "l1kaaf"],
+                ["6", "6", "4", "image-06_22", "l1qaaf"],
+                ["6", "7", "0", "image-06_31", "l1yaa2"],
+                ["6", "7", "1", "image-06_30", "l1yaa"],
+                ["6", "7", "2", "image-06_29", "l1hamza"],
+                ["6", "7", "3", "image-06_28", "l1haa"],
+                ["6", "7", "4", "image-06_27", "l1waw"]
+                // Add more rows if required (can dynamically include based on extracted data)
+            ];
+
+            // Dynamically populate the table body
+            const tableBody = document.getElementById('table-body');
+
+            data.forEach(row => {
+                const tr = document.createElement('tr'); // Create table row
+                row.forEach(cell => {
+                    const td = document.createElement('td'); // Create table cell
+                    td.textContent = cell; // Assign text content
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr); // Append row to table body
+            });
+
+            console.log("Data table populated successfully!");
+        });
+    </script>
+</body>
+</html>
